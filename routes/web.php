@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -17,6 +18,8 @@ use Inertia\Inertia;
 */
 
 Route::get('/', [ArticleController::class, 'index'])->name('articles');
+Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('article');
+Route::post('/articles/{article}/comments', [CommentController::class, 'store'])->name('addcomment');
 
 Route::middleware([
     'auth:sanctum',
