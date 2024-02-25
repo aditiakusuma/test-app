@@ -19,7 +19,7 @@ use Inertia\Inertia;
 
 Route::get('/', [ArticleController::class, 'index'])->name('articles');
 Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('article');
-Route::post('/articles/{article}/comments', [CommentController::class, 'store'])->name('addcomment');
+Route::post('/comments', [CommentController::class, 'store'])->name('addcomment');
 
 Route::middleware([
     'auth:sanctum',

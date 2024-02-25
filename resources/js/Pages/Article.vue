@@ -7,12 +7,13 @@ import TextInput from "@/Components/TextInput.vue";
 import AppLayout from "@/Layouts/AppLayout.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 
-defineProps({ article: Object });
+const props = defineProps({ article: Object });
 
 const form = useForm({
     name: "",
     email: "",
     content: "",
+    article_id: props.article.id
 });
 
 const submit = () => {

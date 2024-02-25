@@ -34,7 +34,7 @@ class CommentController extends Controller
             'content' => $request->content,
             'article_id' => $request->article_id
         ]);
-        return $comment;
+        return to_route('article', ['article' => $request->article_id] );
     }
 
     /**
